@@ -3,7 +3,7 @@
 
 <h1>Pet Party</h1>
 {% if current_user.is_authenticated %}
-<p>Welcome to Pet Party, {{ current_user.username }}</p>
+<p>Welcome to Pet Party, {{ current_user.username | title }}</p>
 {% endif %}
 
 
@@ -15,9 +15,7 @@
                     <p>Name: {{ p.name }}</p>
                     <p>Type: {{ p.type }}</p>
                     <p>Description: {{ p.description }}</p>
-                    <a href="./adopt/">
-                        <input type="submit"/>
-                    </a>
+                    <a href="./adopt/{{ p.id }}">Adopt Me</a>
                         
                 </div>
                 <div>

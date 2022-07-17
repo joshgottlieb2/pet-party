@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, IntegerField, DateTimeField
 from wtforms.validators import DataRequired, Email
 
 
@@ -13,9 +13,11 @@ class RegistrationForm(FlaskForm):
     submit_button = SubmitField('Create my account')
 
 class PetForm(FlaskForm):
+    id = IntegerField('id', validators=[DataRequired()])
     name = StringField('Name', validators=[DataRequired()])
     type = StringField('Type', validators=[DataRequired()])
     description = StringField('Description', validators=[DataRequired()])
     image_link = StringField('ImageLink', validators=[DataRequired()])
+    date_adopted = DateTimeField('date_adopted', validators=[DataRequired()])
     owner = StringField('Owner')
     submit = SubmitField("Adopt Me")

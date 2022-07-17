@@ -1,5 +1,5 @@
-from flask import render_template, url_for, redirect, request
-
+from flask import render_template, url_for, redirect, request, flash
+from app import db
 from app.blueprints.auth.forms import PetForm
 from . import bp as app
 from app.blueprints.main.models import Pet
@@ -39,13 +39,13 @@ def adopt(id):
         try:
             db.session.commit()
             flash("You have successfully adopted your new pet!")
-            return render_template("my_pets.html", form=form, pet_to_update=pet_to_update)
+            return redirect("/")
         except:
             flash("Error.  Try again.")
-            return render_template("my_pets.html", form=form, pet_to_update=pet_to_update)
+            return render_template("/adopt.html", form=form, pet_to_update=pet_to_update)
 
     else:
-        return render_template("my_pets.html", form=form, pet_to_update=pet_to_update)
+        return render_template("/adopt.html", form=form, pet_to_update=pet_to_update)
 
     # if form.validate_on_submit():
     #     owner = form.owner.data

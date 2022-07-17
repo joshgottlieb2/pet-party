@@ -3,27 +3,46 @@
 
 <h1>Adopt Me</h1>
 
-<!-- What happens when you land here -->
-<!-- {% if owner %}
-    if there is an owner, redirect to current user's my pets page
+<div class="container">
 
-    else:
-        form under the pet's info
-        <form method="POST">
-            {{form.hidden_tag() }}
-            {{ form.name.label}}
-            {{ form.name()}}
-            {{ form.type.label}}
-            {{ form.type()}}
-            {{ form.description.label}}
-            {{ form.description()}}
-            {{ form.owner.label}}
-            {{ form.owner()}}
-            {{ form.submit()}}
-        </form>
+    <form action="/adopt/{{ pet_to_update.id }}" method="POST">
+        {{ form.csrf_token}}
+        <div class="form-group">
+            <fieldset id="id-field">
+                {{ form.id.label }}
+                {{ form.id(class="form-control", value=pet_to_update.id) }}
+            </fieldset>
+            <fieldset name="name-field">
+                {{ form.name.label }}
+                {{ form.name(class = "form-control", value=pet_to_update.name) }}
+            </fieldset>
+            <fieldset type="type-field">
+                {{ form.type.label }}
+                {{ form.type(class = "form-control", value=pet_to_update.type) }}
+            </fieldset>
+            <fieldset description="description-field">
+                {{ form.description.label }}
+                {{ form.description(class = "form-control", value=pet_to_update.description) }}
+            </fieldset>
+            <fieldset image_link="image_link-field">
+                {{ form.image_link.label }}
+                {{ form.image_link(class = "form-control", value=pet_to_update.image_link) }}
+            </fieldset>
+            <fieldset date_adopted="date_adopted-field">
+                {{ form.date_adopted.label }}
+                {{ form.date_adopted(class = "form-control", value=pet_to_update.date_adopted) }}
+            </fieldset>
+            <fieldset owner="owner-field">
+                {{ form.owner.label }}
+                {{ form.owner(class = "form-control", value=current_user.id) }}
+            </fieldset>
+            <fieldset submit="submit-field">
+                {{ form.submit(class = "form-control") }}
+            </fieldset>
+        </div>
+    </form>
+</div>
 
-
-{% endif %} -->
 
 {% for p in pets %}
     {% if p.owner == current_user.id %}
