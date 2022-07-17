@@ -3,22 +3,45 @@
 
 <h1>Adopt Me</h1>
 
+<!-- What happens when you land here -->
+<!-- {% if owner %}
+    if there is an owner, redirect to current user's my pets page
+
+    else:
+        form under the pet's info
+        <form method="POST">
+            {{form.hidden_tag() }}
+            {{ form.name.label}}
+            {{ form.name()}}
+            {{ form.type.label}}
+            {{ form.type()}}
+            {{ form.description.label}}
+            {{ form.description()}}
+            {{ form.owner.label}}
+            {{ form.owner()}}
+            {{ form.submit()}}
+        </form>
+
+
+{% endif %} -->
 
 {% for p in pets %}
-{% if p.owner == current_user.id %}
-<div class="card">
-    <div class="card-body">
-        <div>
-            <p>Name: {{ p.name }}</p>
-            <p>Type: {{ p.type }}</p>
-            <p>Description: {{ p.description }}</p>
+    {% if p.owner == current_user.id %}
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <p>Name: {{ p.name }}</p>
+                    <p>Type: {{ p.type }}</p>
+                    <p>Description: {{ p.description }}</p>
 
 
+                </div>
+                <div>
+                    <img class="pet-images" src="{{ p.image_link }}">
+                </div>
+            </div>
         </div>
-        <div>
-            <img class="pet-images" src="{{ p.image_link }}">
-        </div>
-    </div>
-</div>
-{% endif %}
+    {% endif %}
 {% endfor %}
+
+{% endblock content %}
