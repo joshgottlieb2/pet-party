@@ -1,0 +1,4 @@
+__pycache__
+petparty-env
+.env
+migrations

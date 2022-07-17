@@ -1,0 +1,28 @@
+{% extends './layout.html' %}
+{% block content %}
+
+<h1>{{ current_user.username }}'s Pets</h1>
+
+
+{% for p in pets %}
+{% if p.owner == current_user.id %}
+<div class="card">
+    <div class="card-body">
+        <div>
+            <p>Name: {{ p.name }}</p>
+            <p>Type: {{ p.type }}</p>
+            <p>Description: {{ p.description }}</p>
+        
+
+        </div>
+        <div>
+            <img class="pet-images" src="{{ p.image_link }}">
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+
+
+
+{% endblock content %}

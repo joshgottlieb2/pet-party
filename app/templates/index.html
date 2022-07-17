@@ -1,0 +1,29 @@
+{% extends './layout.html' %}
+{% block content %}
+
+<h1>Pet Party</h1>
+{% if current_user.is_authenticated %}
+<p>Welcome to Pet Party, {{ current_user.username }}</p>
+{% endif %}
+
+
+{% for p in pets %}
+    {% if p.owner == None %}
+        <div class="card">
+            <div class="card-body">
+                <div>
+                    <p>Name: {{ p.name }}</p>
+                    <p>Type: {{ p.type }}</p>
+                    <p>Description: {{ p.description }}</p>
+                    <button type="submit" form="/auth/register" formmethod="post">Adopt Me</button>
+                        
+                </div>
+                <div>
+                    <img class="pet-images" src="{{ p.image_link }}">
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+
+{% endblock content %}

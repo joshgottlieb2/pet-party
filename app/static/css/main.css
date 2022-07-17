@@ -1,0 +1,143 @@
+
+/* Header Styles Begin */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    height: 100%;
+}
+
+header {margin-bottom: 5rem;}
+
+.video-wrapper {
+    background-color: black;
+}
+
+.video {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background-color: black;
+}
+
+.header-wrapper {
+    background-color: black;
+    height: 5rem;
+}
+
+.navigation {
+    background-color: black;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+}
+
+.nav-links-header {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 1rem 10% 1rem 10%;
+    
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.nav-links-header a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.nav-links-header a:hover {
+    color: #A3B2BF;
+}
+
+.grey-dash {
+    color: white;
+}
+
+.spacer {
+    width: 20%;
+}
+
+.login-link {
+    justify-content: flex-end;
+   
+}
+
+/* END HEADER */
+
+
+main {
+    margin-left: 10rem;
+    height: 100%;
+    margin-bottom: 10rem;
+}
+
+
+.card-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.pet-images {
+    height: 10rem;
+}
+
+/* BEGIN FOOTER */
+
+footer {
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    /* position:absolute; */
+    bottom:0;
+    width: 100%;
+    position: fixed;
+
+}
+
+.footer-wrapper {
+    margin: 0 8%;
+    padding: 0 2%;
+    background-color: black;
+    color: white;
+}
+
+.footer-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 1rem 10% 1rem 10%;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.footer-list a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.footer-list a:hover {
+    color: #A3B2BF;
+}
+
+
+
+.container {
+    color: black;
+}
+
+
+
+.form {
+    padding-top: 4rem;
+}
+
+/* END FOOTER */
